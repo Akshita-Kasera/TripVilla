@@ -11,7 +11,7 @@ module.exports.listingSchema = Joi.object({
     location: Joi.string().required(),
     category: Joi.string().valid(
       'hotel', 'iconic cities', 'resort', 'arctic', 'villa','rooms',
-      'beach', 'castles', 'heritage', 'trending','amazing pools','boat','farms',
+      'beach', 'castles', 'heritage', 'trending','boat','farms',
       'camping'
     ).required(),
     image: Joi.object({

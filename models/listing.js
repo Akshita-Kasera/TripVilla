@@ -52,7 +52,7 @@ const listingSchema=new Schema({
     type: String,
     enum: [
       'hotel', 'iconic cities', 'resort', 'arctic', 'villa','rooms',
-      'beach', 'castles', 'heritage', 'trending','amazing pools','boat','farms',
+      'beach', 'castles', 'heritage', 'trending','boat','farms',
       'camping'
     ],
     required: true
