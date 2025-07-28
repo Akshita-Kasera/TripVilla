@@ -42,7 +42,8 @@ module.exports.renderNewForm=(req, res) => {
         image: { url: '' },
         price: '',
         country: '',
-        location: ''
+        location: '',
+        category:'',
     };
     res.render("listings/new.ejs", { listing });
 };
