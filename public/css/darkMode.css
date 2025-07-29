@@ -169,3 +169,7 @@ body.dark-theme {
 .dark-theme .navbar-brand{
     color: #ff385c !important;
 }
+
+.dark-theme .clear-filter{
+  background-color:#ff385c;
+}
