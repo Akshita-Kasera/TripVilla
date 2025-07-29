@@ -165,3 +165,7 @@ body.dark-theme {
 .dark-theme .form-check-label {
   color: #f1f1f1;
 }
+
+.dark-theme .navbar-brand{
+    color: #fe424d !important;
+}
