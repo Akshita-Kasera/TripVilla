@@ -126,7 +126,7 @@ body.dark-theme {
 }
 
 .dark-theme .invalid-feedback {
-    color: #f44336;
+    color: #ff385c;
 }
 
 /* Navbar toggler icon (hamburger menu) visibility */
@@ -167,5 +167,5 @@ body.dark-theme {
 }
 
 .dark-theme .navbar-brand{
-    color: #fe424d !important;
+    color: #ff385c !important;
 }
