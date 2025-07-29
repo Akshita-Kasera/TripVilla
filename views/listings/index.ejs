@@ -1,100 +1,64 @@
 <% layout('/layouts/boilerplate') -%>
-  <!-- <h3>All Listings</h3> -->
-   <style>
-    #filters{
+  <style>
+  .filter {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .filter:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .filter p {
+    font-size: 0.8rem;
+  }
+
+  .tax-info {
+    display: none;
+  }
+
+  .tax-toggle {
+    border: 1px solid rgb(25, 25, 25);
+    border-radius: 1rem;
+    margin-top: 1.25rem;
+    height: 3.25rem;
+    padding: 1rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ✅ Mobile View Overrides Only */
+  @media (max-width: 768px) {
+    .filters {
       display: flex;
       flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: space-between;
     }
-    .filter{
-      text-align: center;
-      margin-right: 2rem;
-      margin-top: 2rem;
-      opacity: 0.7;
-      text-decoration: none;      /* removes underline */
-      color: inherit; 
-    }
-    .filter:hover{
-      opacity: 1;
-      cursor:pointer;
-    }
-    .filter p{
-      font-size: 0.8rem;
-    }
-    .tax-info{
-      display: none;
-    }
-    .tax-toggle{
-      border: 1px solid rgb(25, 25, 25);
-      /* border: 1px solid black; */
-      border-radius: 1rem;
-      margin-top: 1.25rem;
-      height: 3.25rem;
-      padding: 1rem;
-      margin-left: 2rem;
-      display: flex;
-      align-items: center;
-    }
-   </style>
 
-   <div id="filters">
-    <a href="/listings?category=trending" class="filter">
-      <i class="fa-solid fa-fire"></i><p>Trending</p>
-    </a>
-    <a href="/listings?category=beach" class="filter">
-      <i class="fa-solid fa-umbrella-beach"></i><p>Beach</p>
-    </a>
-    <a href="/listings?category=resort" class="filter">
-      <i class="fa-solid fa-spa"></i><p>Resort</p>
-    </a>
-    <a href="/listings?category=arctic" class="filter">
-      <i class="fa-solid fa-snowflake"></i><p>Arctic</p>
-    </a>
-    <a href="/listings?category=villa" class="filter">
-      <i class="fa-solid fa-house-chimney"></i><p>Villa</p>
-    </a>
-    <a href="/listings?category=castles" class="filter">
-      <i class="fa-solid fa-chess-rook"></i><p>Castles</p>
-    </a>
-    <a href="/listings?category=heritage" class="filter">
-      <i class="fa-solid fa-landmark"></i><p>Heritage</p>
-    </a>
-    <a href="/listings?category=hotel" class="filter">
-      <i class="fa-solid fa-hotel"></i><p>Hotels</p>
-    </a>
-    <a href="/listings?category=rooms" class="filter">
-    <i class="fa-solid fa-bed"></i>
-    <p>Rooms</p>
-    </a>
-    <a href="/listings?category=boat" class="filter">
-      <i class="fa-solid fa-sailboat"></i>
-      <p>Boat</p>
-    </a>
-    <a href="/listings?category=farms" class="filter">
-      <i class="fa-solid fa-wheat-awn"></i>
-      <p>Farms</p>
-    </a>
-    <a href="/listings?category=camping" class="filter">
-      <i class="fa-solid fa-campground"></i>
-      <p>Camping</p>
-    </a>
-        <a href="/listings?category=iconic cities" class="filter">
-      <i class="fa-solid fa-mountain-city"></i><p>Iconic Cities</p>
-    </a>
-    
-    
-      <!-- Tax Toggle -->
-    <div class="tax-toggle ms-auto">
-      <div class="form-check-reverse form-switch">
-        <input class="form-check-input" role="switch" type="checkbox" id="flexSwitchCheckDefault">
-        <label class="form-check-label" for="flexSwitchCheckDefault">Display total after Taxes</label>
-      </div>
-    </div>
-  </div>
-  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    .filter {
+      flex: 1 1 30%;
+      max-width: 32%;
+      margin-right: 0;
+    }
+  }
+</style>
+
+<% layout("layouts/boilerplate") %>
+<div class="container-fluid mt-3 px-2 px-md-5">
+<%- include('filters') %>
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
   <% for(let listing of allListings) { %>
-    
-    <a href="/listings/<%=listing._id%>" class="listing-link">
+  <a href="/listings/<%=listing._id%>" class="listing-link">
   <div class="card listing-card " >
+     <!-- Heart icon in corner -->
+          <i class="fa-regular fa-heart wishlist-icon" onclick="toggleHeart(this)"></i>
   <img src="<%= listing.image?.url %>"
    class="card-img-top" 
    alt="listing_image"
@@ -110,18 +74,22 @@
 </div>
 </a>
 <% } %>
-</div> 
+</div>
+</div>
+<script src="/js/filters.js"></script>
 
 <script>
-  let taxSwitch=document.getElementById("flexSwitchCheckDefault");
-  taxSwitch.addEventListener("click",()=>{
-    let taxInfo = document.getElementsByClassName("tax-info");
-    for (let info of taxInfo) {
-      info.style.display = (info.style.display !== "inline") ? "inline" : "none";
-    }
-
-  })
+  function toggleHeart(icon) {
+    icon.classList.toggle('liked');
+    icon.classList.toggle('fa-regular');
+    icon.classList.toggle('fa-solid');
+  }
 </script>
+
+   
+    
+    
+
 
 
 

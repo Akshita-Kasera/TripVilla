@@ -149,3 +149,8 @@ module.exports.destroyListing=async(req,res)=>{
     req.flash("success","Listing deleted successfully!!");
     res.redirect("/listings");
 };
+
+module.exports.userListings = async (req, res) => {
+  const userListings = await Listing.find({ owner: req.user._id });
+  res.render("account/listings", { userListings });
+};

@@ -6,10 +6,6 @@ const Review=require("../models/review.js");
 const Listing=require('../models/listing.js');  
 const{validateReview ,isLoggedIn,isReviewAuthor}=require("../middleware.js");
 const reviewController=require("../controllers/review.js");
-
-
- 
-
 // Reviews
 // POST Review Route
 router.post("/",isLoggedIn,validateReview,wrapAsync(reviewController.createReview));

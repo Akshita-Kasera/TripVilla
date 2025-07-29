@@ -21,7 +21,7 @@
   </div>
 
   <!-- Edit/Delete Buttons -->
-  <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
+  <% if(currentUser && listing.owner._id.equals(currentUser._id)) { %>
    <div class="d-flex flex-wrap gap-3 mb-4">
     
       <a href="/listings/<%= listing._id %>/edit" 
@@ -36,7 +36,7 @@
   <% } %>
 
   <!-- Review Form -->
-  <% if(currUser) { %>
+  <% if(currentUser) { %>
     <hr>
     <h4>Leave a Review</h4>
     <form action="/listings/<%= listing.id %>/reviews" method="POST" class="needs-validation" novalidate style="margin-bottom: 2rem;">

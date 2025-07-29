@@ -9,13 +9,89 @@ body{
 .container{
     flex:1 !important;
 }
+
+/* Base navbar */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 70px;
+}
+
+/* Brand/logo */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.7rem !important ;
+  color: #ff385c !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+/* Nav links */
+.navbar-nav .nav-link {
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+.custom-dark {
+  color: #313232 !important;        
+  font-size: 17px;    
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.custom-dark:hover {
+  color: #0c0c0c !important;    
+  font-weight: 620;  
+}
+
+/* .navbar-brand i {
+  font-size: 1.7rem;
+  color: #ff385c;
+}
+
 .navbar{
     height:4rem; 
     background-color:#fff;
-}
+} */
 
 .nav-link{
     color:#222222 !important
+}
+
+/* Search bar */
+form.d-flex input[type="search"] {
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  transition: border-color 0.2s;
+}
+
+
+
+form.d-flex button {
+  border-radius: 20px;
+  padding: 6px 14px;
+  margin-left: 6px;
+  background-color: #ff385c;
+  color: #fff;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+form.d-flex button:hover {
+  background-color: #d9374d;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  form.d-flex {
+    margin-top: 10px;
+  }
 }
 
 /* Footer */
@@ -142,6 +218,46 @@ body{
 .wishlist-icon.liked {
   color: #ff385c; /* Airbnb red */
 }
+
+  
+@media (max-width: 768px) {
+  .filters {
+    gap: 12px;
+  }
+  
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #fff;
+    padding: 1.2rem 1rem 2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+    transition: all 0.4s ease;
+    z-index: 1000;
+  }
+
+  .navbar-collapse.show {
+    height: auto !important;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 14px;
+  }
+
+  .navbar-collapse .form-control {
+    border-radius: 10px;
+  }
+
+  .navbar-collapse form {
+    margin-top: 20px;
+  }
+}
+
+
+
 
 
 

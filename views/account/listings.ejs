@@ -1,0 +1,32 @@
+<% layout("layouts/boilerplate") %>
+<style>
+.listing-link{
+    text-decoration: none !important;
+    
+}
+</style>
+<div class="container-fluid mt-4 px-3 px-md-5">
+  <h3 class="mb-4">My Listings</h3>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <% for (let l of userListings) { %>
+      <div class="col">
+       
+        <div class="mycard position-relative" >
+            <a href="/listings/<%= l._id %>" class="listing-link">
+            <img src="<%= l.image?.url %>" alt="img" class="myimg">
+            </a>
+            <div class="mybody">
+            <h6><b><%= l.title %></b></h6>
+            <p class=" mb-1"><%= l.location %>, <%= l.country %></p>
+            <p class="fw">₹ <%= l.price.toLocaleString("en-IN") %>
+                <i class="tax-info"> &nbsp;+20%GST</i>
+            </p>
+            </div>
+        </div>
+        
+        </div>
+
+    <% } %>
+  </div>
+</div>

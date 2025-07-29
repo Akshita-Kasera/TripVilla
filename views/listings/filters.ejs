@@ -1,0 +1,70 @@
+<% if (category) { %>
+  <h4 class="mb-4">Category: <%= category.charAt(0).toUpperCase() + category.slice(1) %></h4>
+  <a href="/listings" class="btn mb-3 clear-filter bg-danger">
+    <i class="fa-solid fa-xmark"></i> Clear Filter
+  </a>
+<% } %>
+
+<% if (!category) { %>
+  <!-- Mobile View Buttons (visible only on small screens) -->
+  <div class="d-flex d-md-none justify-content-between align-items-center mb-2 gap-2 flex-wrap">
+    <!-- More Button -->
+    <button class="btn more-button d-flex align-items-center" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mobileFiltersCollapse" aria-expanded="false" aria-controls="mobileFiltersCollapse">
+      <i class="fa-solid fa-sliders me-1"></i> More
+    </button>
+
+    <!-- Tax Toggle (aligned) -->
+    <div class="form-check form-switch d-flex align-items-center mb-0">
+      <div class="form-check form-switch ">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckMobile">
+        <label class="form-check-label" for="flexSwitchCheckMobile">Display total after taxes</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Collapse (filters) -->
+  <div class="collapse d-md-none mb-3" id="mobileFiltersCollapse">
+  <div class="filters">
+      <a href="/listings?category=trending" class="filter"><i class="fa-solid fa-fire"></i><p>Trending</p></a>
+      <a href="/listings?category=beach" class="filter"><i class="fa-solid fa-umbrella-beach"></i><p>Beach</p></a>
+      <a href="/listings?category=resort" class="filter"><i class="fa-solid fa-spa"></i><p>Resort</p></a>
+      <a href="/listings?category=arctic" class="filter"><i class="fa-solid fa-snowflake"></i><p>Arctic</p></a>
+      <a href="/listings?category=villa" class="filter"><i class="fa-solid fa-house-chimney"></i><p>Villa</p></a>
+      <a href="/listings?category=castles" class="filter"><i class="fa-solid fa-chess-rook"></i><p>Castles</p></a>
+      <a href="/listings?category=heritage" class="filter"><i class="fa-solid fa-landmark"></i><p>Heritage</p></a>
+      <a href="/listings?category=hotel" class="filter"><i class="fa-solid fa-hotel"></i><p>Hotels</p></a>
+      <a href="/listings?category=rooms" class="filter"><i class="fa-solid fa-bed"></i><p>Rooms</p></a>
+      <a href="/listings?category=boat" class="filter"><i class="fa-solid fa-sailboat"></i><p>Boat</p></a>
+      <a href="/listings?category=farms" class="filter"><i class="fa-solid fa-wheat-awn"></i><p>Farms</p></a>
+      <a href="/listings?category=camping" class="filter"><i class="fa-solid fa-campground"></i><p>Camping</p></a>
+      <a href="/listings?category=iconic cities" class="filter"><i class="fa-solid fa-mountain-city"></i><p>Iconic Cities</p></a>
+    </div>
+    </div>
+
+
+  <!-- Desktop View Filters -->
+  <div class="filters d-none d-md-flex">
+    <a href="/listings?category=trending" class="filter"><i class="fa-solid fa-fire"></i><p>Trending</p></a>
+    <a href="/listings?category=beach" class="filter"><i class="fa-solid fa-umbrella-beach"></i><p>Beach</p></a>
+    <a href="/listings?category=resort" class="filter"><i class="fa-solid fa-spa"></i><p>Resort</p></a>
+    <a href="/listings?category=arctic" class="filter"><i class="fa-solid fa-snowflake"></i><p>Arctic</p></a>
+    <a href="/listings?category=villa" class="filter"><i class="fa-solid fa-house-chimney"></i><p>Villa</p></a>
+    <a href="/listings?category=castles" class="filter"><i class="fa-solid fa-chess-rook"></i><p>Castles</p></a>
+    <a href="/listings?category=heritage" class="filter"><i class="fa-solid fa-landmark"></i><p>Heritage</p></a>
+    <a href="/listings?category=hotel" class="filter"><i class="fa-solid fa-hotel"></i><p>Hotels</p></a>
+    <a href="/listings?category=rooms" class="filter"><i class="fa-solid fa-bed"></i><p>Rooms</p></a>
+    <a href="/listings?category=boat" class="filter"><i class="fa-solid fa-sailboat"></i><p>Boat</p></a>
+    <a href="/listings?category=farms" class="filter"><i class="fa-solid fa-wheat-awn"></i><p>Farms</p></a>
+    <a href="/listings?category=camping" class="filter"><i class="fa-solid fa-campground"></i><p>Camping</p></a>
+    <a href="/listings?category=iconic cities" class="filter"><i class="fa-solid fa-mountain-city"></i><p>Iconic Cities</p></a>
+
+    <!-- Tax Toggle -->
+    <div class="tax-toggle ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" role="switch" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+      </div>
+    </div>
+  </div>
+<% } %>

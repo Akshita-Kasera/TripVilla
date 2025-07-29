@@ -1,0 +1,167 @@
+/* ========== General ========== */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-theme a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+/* ========== Navbar ========== */
+.dark-theme .navbar {
+    background-color: #1e1e1e !important;
+}
+
+.dark-theme .navbar .nav-link,
+.dark-theme .navbar-brand {
+    color: #e0e0e0 !important;
+}
+
+.dark-theme .dropdown-menu {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.dark-theme .dropdown-item {
+    color: #e0e0e0;
+}
+
+/* ========== Footer ========== */
+.dark-theme .f-info {
+    background-color: #1e1e1e;
+    color: #cccccc;
+}
+
+.dark-theme .f-info-links a {
+    color: #bbbbbb;
+}
+
+.dark-theme .f-info-socials i {
+    color: #bbbbbb;
+}
+
+/* ========== Search ========== */
+.dark-theme .search-inp {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+.dark-theme .search-inp::placeholder {
+    color: #aaaaaa;
+}
+
+.dark-theme .search-btn {
+    background-color: #ff385c !important;
+    color: #ffffff;
+}
+
+/* ========== Listings / Cards ========== */
+.dark-theme .listing-card {
+  background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-theme .listing-card .card-text {
+    color: #e0e0e0;
+}
+
+.dark-theme .wishlist-icon {
+    color: #e0e0e0;
+}
+
+/* ========== Filters ========== */
+.dark-theme #filters {
+    background-color: #1e1e1e;
+}
+
+.dark-theme .filter {
+    opacity: 0.8;
+    color: #cccccc;
+}
+
+.dark-theme .tax-toggle {
+    background-color: #2a2a2a;
+    color: #dddddd;
+    border: 1px solid #777777;
+}
+
+/* ========== Form Inputs (new.ejs, edit.ejs) ========== */
+.dark-theme input,
+.dark-theme textarea,
+.dark-theme select {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+.dark-theme input::placeholder,
+.dark-theme textarea::placeholder {
+    color: #aaaaaa;
+}
+
+.dark-theme .form-control:focus {
+    background-color: #262626;
+    color: #ffffff;
+    border-color: #999999;
+}
+
+.dark-theme .form-label {
+    color: #dddddd;
+}
+
+
+/* ========== Buttons ========== */
+.dark-theme .btn {
+    background-color:#262626 ;
+    color: white;
+    border: none;
+}
+
+/* ========== Validation Feedback ========== */
+.dark-theme .valid-feedback {
+    color: #4caf50;
+}
+
+.dark-theme .invalid-feedback {
+    color: #f44336;
+}
+
+/* Navbar toggler icon (hamburger menu) visibility */
+.dark-theme .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Mobile collapse menu background */
+.dark-theme .navbar-collapse,
+.dark-theme .navbar-nav {
+  background-color: #1f1f1f !important;
+}
+
+/* Moon/Sun icon inside toggle button */
+.dark-theme #themeIcon {
+  color: #f1f1f1 !important;
+}
+.dark-theme .nav-link:hover  {
+  color: #f5de5e !important;
+}
+.dark-theme .filter:hover  {
+  color: #f5de5e !important;
+}
+
+
+/* Toggle switch */
+.dark-theme .form-check-input {
+  background-color: #555;
+  border-color: #999;
+}
+
+.dark-theme .form-check-input:checked {
+  background-color: #0d6efd; /* Bootstrap primary */
+}
+
+.dark-theme .form-check-label {
+  color: #f1f1f1;
+}
