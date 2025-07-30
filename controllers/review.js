@@ -4,8 +4,12 @@ const Review=require("../models/review")
 module.exports.createReview=async(req,res)=>{
     let listing=await Listing.findById(req.params.id);
     let newReview=new Review(req.body.review);
-    listing.reviews.push(newReview);
+    
     newReview.author=req.user._id;
+    newReview.listing = listing._id;
+    listing.reviews.push(newReview);
+
+
     await newReview.save();
     await listing.save();
     req.flash("success","New Review created successfully!!");
@@ -19,3 +23,5 @@ module.exports.destroyReview=async(req,res)=>{
         req.flash("success","Review Deleted!!");
         res.redirect(`/listings/${id}`)
     }
+
+    

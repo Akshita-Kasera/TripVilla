@@ -1,17 +1,16 @@
 const express=require("express");
 const router=express.Router();
-const User=require("../models/user.js");
 const wrapAsync=require("../utils/wrapAsync.js");
 const passport=require("passport");
 const {saveRedirectUrl}=require("../middleware.js");
 const userController=require("../controllers/user.js");
 const Listing = require("../models/listing");
 const Review = require("../models/review"); 
-const{validateReview ,isLoggedIn,isReviewAuthor}=require("../middleware.js");
+const{isLoggedIn}=require("../middleware.js");
 
 router.route("/signup")
     .get(userController.renderSignup)
-    .post(userController.signup);
+    .post(wrapAsync(userController.signUp));
 
 router.route("/login")
     .get(userController.renderLoginForm)
@@ -20,7 +19,8 @@ router.route("/login")
     failureRedirect:'/login',
     failureFlash:true,
     }),
-    userController.login);
+      wrapAsync(userController.login));
+    
 
 
 router.get("/logout",userController.logout);
@@ -31,7 +31,10 @@ router.get("/account/listings", isLoggedIn, wrapAsync(async (req, res) => {
 }));
 
 router.get("/account/reviews", isLoggedIn, wrapAsync(async (req, res) => {
-  const reviews = await Review.find({ author: req.user._id }).populate("listing");
+  const reviews = await Review.find({ author: req.user._id }).populate({
+    path: "listing",
+    select: "title _id"
+  });
   res.render("account/reviews", { reviews });
 }));
   
