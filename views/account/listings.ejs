@@ -10,7 +10,7 @@
   <a href="/listings/<%=listing._id%>" class="listing-link">
   <div class="card listing-card " >
      <!-- Heart icon in corner -->
-    <i class="fa-regular fa-heart wishlist-icon" onclick="toggleHeart(event,this)"></i>
+    <i class="fa-regular fa-heart wishlist-icon" onclick="toggleHeart(this)"></i>
   <img src="<%= listing.image?.url %>"
    class="card-img-top" 
    alt="listing_image"
