@@ -1,34 +1,33 @@
 <% layout("layouts/boilerplate") %>
 <style>
-.listing-link{
-    text-decoration: none !important;
-    
-}
+ 
+
 </style>
 <div class="container-fluid mt-4 px-3 px-md-5">
   <h3 class="mb-4">My Listings</h3>
-  
-<div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
-    <% for (let l of userListings) { %>
-   <div  class="card listing-card ">
-          <!-- Heart icon in corner -->
-    <i class="fa-regular fa-heart wishlist-icon" onclick="toggleHeart(this)"></i>
-            <a href="/listings/<%= l._id %>" class="listing-link">
-            <img src="<%= l.image?.url %>"
-            class="card-img-top" 
-            alt="listing_image"
-            style="height: 20rem;">
-            <div class="card-img-overlay"></div>
-            </a>
-            <div class="mybody">
-            <p ><b><%= l.title %></b><br>
-            <%= l.location %><br>
-            ₹ <%= l.price.toLocaleString("en-IN") %>
-            </p>
-            </div>
-          </div>
-          <% } %>
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+  <% for(let listing of userListings) { %>
+  <a href="/listings/<%=listing._id%>" class="listing-link">
+  <div class="card listing-card " >
+     <!-- Heart icon in corner -->
+    <i class="fa-regular fa-heart wishlist-icon" onclick="toggleHeart(event,this)"></i>
+  <img src="<%= listing.image?.url %>"
+   class="card-img-top" 
+   alt="listing_image"
+   style="height: 20rem;">
+   <div class="card-img-overlay"></div>
+  <div class="card-body">
+    <p class="card-text">
+      <b><%= listing.title %></b><br>
+      &#8377;<%= (listing.price ?? 0).toLocaleString("en-IN") %>/night
+      </p>
   </div>
+</div>
+</a>
+<% } %>
+</div>
+  
+
 </div>
 <script>
   function toggleHeart( icon) {
