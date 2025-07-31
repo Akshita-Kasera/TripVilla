@@ -1,6 +1,27 @@
 <% layout("layouts/boilerplate") %>
 <style>
- 
+ .listing-card{
+    border:none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width:100% !important;
+    object-fit:cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.listing-link{
+    text-decoration: none !important;
+}
+
 
 </style>
 <div class="container-fluid mt-4 px-3 px-md-5">
@@ -15,7 +36,6 @@
    class="card-img-top" 
    alt="listing_image"
    style="height: 20rem;">
-   <div class="card-img-overlay"></div>
   <div class="card-body">
     <p class="card-text">
       <b><%= listing.title %></b><br>
