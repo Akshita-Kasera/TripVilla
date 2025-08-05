@@ -1,5 +1,5 @@
 # 🏡 TripVilla – Your Go-To Travel Stay Booking Platform 🌍
-**Live Demo 🚀** [https://tripvilla.onrender.com]
+[**Live Demo 🚀**] (https://tripvilla.onrender.com)
 
 TripVilla is a full-stack web application inspired by Airbnb that enables users to discover, list, and review vacation properties. Built with the MVC pattern, the platform includes dynamic property listings, user authentication, reviews, image uploads, and a mobile-friendly responsive design.
 
