@@ -48,9 +48,3 @@ TripVilla/
 
 
 
-
-
-
-
-git clone https://github.com/Akshita-Kasera/TripVilla.git
-cd TripVilla
